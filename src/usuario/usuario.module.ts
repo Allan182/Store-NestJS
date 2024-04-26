@@ -8,5 +8,5 @@ import { EmailUnicoValidator } from "./validacao/email-unico.validator";
     providers: [UsuarioRepository, EmailUnicoValidator],
 })
 export class UsuarioModule {
-
+ 
 }
