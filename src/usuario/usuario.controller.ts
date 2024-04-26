@@ -4,7 +4,7 @@ import { criaUsuarioDTO } from "./dto/CriaUsuario.dto";
 
 @Controller('/usuarios')
 export class UsuarioController {
-
+ 
     constructor(private usuarioRepository: UsuarioRepository) { }
 
     @Post()
