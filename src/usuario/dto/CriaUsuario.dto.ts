@@ -6,7 +6,7 @@ export class criaUsuarioDTO {
     @IsString({ message: "Insira Caracteres Validos" })
     @IsNotEmpty({ message: "O Nome não pode ser vazio!" })
     nome: String;
-
+ 
     @EmailUnico({ message: "Já Existe um Usuário com este E-mail!"})
     @IsEmail(undefined, { message: "Insira um E-mail Válido!" })
     email: String;
