@@ -13,7 +13,7 @@ export class EmailUnicoValidator implements ValidatorConstraintInterface {
         return !usuarioComEmailExiste;
     }
 }
-
+ 
 export const EmailUnico = (opcoesDeValidacao: ValidationOptions) => {
     return (objeto: Object, propriedade: string) => {
         registerDecorator({
