@@ -7,7 +7,6 @@ export class ProdutoController {
 
     constructor(private produtoRepository: ProdutoRepository){}
     
-
     @Post()
     async criaProduto(@Body() dadosProduto: CriaProdutoDTO){
         this.produtoRepository.salvar(dadosProduto);
