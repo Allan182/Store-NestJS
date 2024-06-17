@@ -13,12 +13,30 @@ export class UsuarioRepository {
     async listar() {
         return this.usuarios;
     }
- 
-    async emailExiste(email: string){
+
+    async emailExiste(email: string) {
         const possivelUsuario = this.usuarios.find(
             usuario => usuario.email === email
         );
         return possivelUsuario !== undefined;
     }
 
+    async atualiza(id: string, dadosDeAtt: Partial<UsuarioEntity>) {
+        const possivelUsuario = this.usuarios.find(
+            userSave => userSave.id === id
+        );
+
+        if (!possivelUsuario) {
+            throw new Error('Usuário não encontrado!');
+        };
+
+        Object.entries(dadosDeAtt).forEach(([chave, valor]) => {
+            if (chave === 'id') {
+                return;
+            }
+            possivelUsuario[chave] = valor;
+        });
+
+        return possivelUsuario;
+    }
 }
